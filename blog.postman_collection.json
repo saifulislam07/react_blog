@@ -1,0 +1,43 @@
+{
+	"info": {
+		"_postman_id": "10221ba0-af2c-426a-88e4-618d59828d08",
+		"name": "blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32708341",
+		"_collection_link": "https://bro-coders-95970.postman.co/workspace/Bro-Coders~8ec96094-cdf7-464a-84f2-e1fe311a5f30/collection/32708341-10221ba0-af2c-426a-88e4-618d59828d08?action=share&source=collection_link&creator=32708341"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/api/blogs",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"title\" : \"hello world\",\r\n\"author\" : \"saiful\",\r\n\"description\" : \"description\",\r\n\"shortDescription\" : \"shortDescription\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/blogs",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
