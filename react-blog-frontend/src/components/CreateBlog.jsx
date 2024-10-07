@@ -1,19 +1,48 @@
 import React, { useState } from 'react'
 import Editor from 'react-simple-wysiwyg';
 import { useForm } from "react-hook-form";
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const CreateBlog = () => {
     const [html, setHtml] = useState('');
+    const [imageId, setImageId] = useState('');
+    const navigate = useNavigate();
+
     function onChange(e) {
         setHtml(e.target.value);
     }
+
+    const handleFileChange = async (e) => {
+        const file = e.target.files[0];
+        const formData = new FormData();
+        formData.append("image", file);
+
+        const res = await fetch("http://127.0.0.1:8000/api/save-temp-image", {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await res.json();
+
+        if (result.status == false) {
+            alert(result.errors.image);
+            e.target.value = null;
+        }
+
+        setImageId(result.image.id);
+
+        console.log(result);
+    }
+
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
 
     const formSubmit = async (data) => {
-        const newData = { ...data, "description": html }
+        const newData = { ...data, "description": html, image_id: imageId }
+
         const res = await fetch("http://127.0.0.1:8000/api/blogs", {
             method: "POST",
             headers: {
@@ -22,6 +51,9 @@ const CreateBlog = () => {
             body: JSON.stringify(newData)
 
         })
+        toast("Blog addedd successfully!");
+        navigate('/')
+
         // console.log(newData);
     }
 
@@ -58,7 +90,7 @@ const CreateBlog = () => {
                         </div>
                         <div className="mb-3">
                             <label className='form-label'>Image</label>
-                            <input type="file" className='form-control' name='' placeholder='Title' />
+                            <input type="file" onChange={handleFileChange} className='form-control' name='' placeholder='Title' />
                         </div>
                         <div className="mb-3">
                             <label className='form-label'>Author</label>
