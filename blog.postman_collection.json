@@ -8,7 +8,7 @@
 	},
 	"item": [
 		{
-			"name": "http://127.0.0.1:8000/api/blogs",
+			"name": "blog create",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -34,6 +34,118 @@
 					"path": [
 						"api",
 						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "image store",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"title\" : \"hello world\",\r\n\"author\" : \"saiful\",\r\n\"description\" : \"description\",\r\n\"shortDescription\" : \"shortDescription\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/save-temp-image",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"save-temp-image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Blog list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/blogs",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "blog show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/blogs/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"blogs",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"title\" : \"hello world update\",\r\n\"author\" : \"saiful dd\",\r\n\"description\" : \"description sdf\",\r\n\"shortDescription\" : \"shortDescription sdfsd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/blogs/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"blogs",
+						"1"
 					]
 				}
 			},
