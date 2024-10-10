@@ -45,13 +45,14 @@
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "raw",
-					"raw": "{\r\n\r\n\"title\" : \"hello world\",\r\n\"author\" : \"saiful\",\r\n\"description\" : \"description\",\r\n\"shortDescription\" : \"shortDescription\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/SAAD/Desktop/images (2).png"
 						}
-					}
+					]
 				},
 				"url": {
 					"raw": "http://127.0.0.1:8000/api/save-temp-image",
@@ -146,6 +147,35 @@
 						"api",
 						"blogs",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/blogs?keyword=ads",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"blogs"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "ads"
+						}
 					]
 				}
 			},
