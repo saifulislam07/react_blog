@@ -22,10 +22,9 @@ const BlogCard = ({ blog, blogs, setBlogs }) => {
     }
 
     return (
-        <div className="col-12 col-md-2 col-lg-3 mb-4">
-
-            <div className="card border-0 shadow-lg">
-                <img className='card-img-top' src={showImage(blog.image)} alt="" />
+        <div className="col mb-4">
+            <div className="card border-0 shadow-sm">
+                <img className='card-img-top' src={showImage(blog.image)} alt="blog image" />
                 <div className="div card-body">
                     <h2 className='h5'>{blog.title}</h2>
                     <p>{blog.shortDescription}</p>

@@ -40,20 +40,16 @@ const Blogs = () => {
                     </div>
                 </form>
             </div>
-            {/* blogs code here */}
             <div className='d-flex justify-content-between pt-5 mb-4'>
                 <h4>Blogs</h4>
                 <a href="/create" className='btn btn-dark'>Create</a>
             </div>
-            <div className="row">
-
+            <div className="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
                 {
                     (blogs) && blogs.map((blog) => {
-
                         return (<BlogCard blogs={blogs} setBlogs={setBlogs} blog={blog} key={blog.id} />)
                     })
                 }
-
             </div>
         </div>
     )
