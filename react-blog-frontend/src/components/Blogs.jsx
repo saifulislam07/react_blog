@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import BlogCard from './BlogCard'
+import React, { useEffect, useState } from 'react';
+import BlogCard from './BlogCard';
 
 const Blogs = () => {
 
@@ -40,7 +40,7 @@ const Blogs = () => {
                     </div>
                 </form>
             </div>
-
+            {/* blogs code here */}
             <div className='d-flex justify-content-between pt-5 mb-4'>
                 <h4>Blogs</h4>
                 <a href="/create" className='btn btn-dark'>Create</a>
